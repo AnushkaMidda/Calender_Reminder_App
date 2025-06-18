@@ -28,7 +28,7 @@ def show_calendar():
     for widget in root.winfo_children():
         widget.destroy()
 
-    loading_label = tk.Label(root, text="🔄 Loading Calendar...", font=("Helvetica", 13, "italic"), bg="#FFFACD")
+    loading_label = tk.Label(root, text="🔄 Loading Calendar...", font=("Helvetica", 25, "italic"), bg="#FFFACD")
     loading_label.pack(pady=50)
     root.after(1000, build_calendar_ui)  # Wait 1 second before showing calendar
 
@@ -40,7 +40,7 @@ def build_calendar_ui():
         widget.destroy()
 
     heading = tk.Label(root, text="📅 Here's Your Monthly Calendar!",
-                       font=("Helvetica", 16, "bold"), bg="#FFFACD")
+                       font=("Helvetica", 20, "bold"), bg="#FFFACD")
     heading.pack(pady=10)
 
     now = datetime.datetime.now()
@@ -51,25 +51,25 @@ def build_calendar_ui():
     cal_frame = tk.Frame(root, bg="#FFFACD", bd=2, relief="groove")
     cal_frame.pack(pady=10)
     cal_label = tk.Label(cal_frame, text=cal_text,
-                         font=("Courier", 11, "bold"), bg="#FFFACD", justify="left")
+                         font=("Courier", 16, "bold"), bg="#FFFACD", justify="left")
     cal_label.pack(padx=10, pady=5)
 
     # Reminder Section
     reminder_heading = tk.Label(root, text="📝 Set a Reminder Below",
-                                font=("Helvetica", 14, "bold"), bg="#FFFACD")
+                                font=("Helvetica", 18, "bold"), bg="#FFFACD")
     reminder_heading.pack(pady=10)
 
     # Date Entry
-    date_label = tk.Label(root, text="Enter date (DD-MM-YYYY):", font=("Helvetica", 11), bg="#FFFACD")
+    date_label = tk.Label(root, text="Enter date (DD-MM-YYYY):", font=("Helvetica", 17), bg="#FFFACD")
     date_label.pack()
-    date_entry = tk.Entry(root, width=30)
-    date_entry.pack()
+    date_entry = tk.Entry(root, width=35, font=("Helvetica", 14))
+    date_entry.pack(pady=5)
 
     # Message Entry
-    msg_label = tk.Label(root, text="Reminder Message:", font=("Helvetica", 11), bg="#FFFACD")
+    msg_label = tk.Label(root, text="Reminder Message:", font=("Helvetica", 17), bg="#FFFACD")
     msg_label.pack()
-    msg_entry = tk.Entry(root, width=30)
-    msg_entry.pack()
+    msg_entry = tk.Entry(root, width=35, font=("Helvetica", 14))
+    msg_entry.pack(pady=5)
 
     # Save Reminder Function
     def save_reminder():
@@ -93,15 +93,15 @@ def build_calendar_ui():
 
     # Buttons
     save_btn = tk.Button(root, text="💾 Save Reminder", command=save_reminder,
-                         bg="#2196F3", fg="white", padx=10, pady=5, font=("Helvetica", 10, "bold"))
+                         bg="#2196F3", fg="white", padx=10, pady=5, font=("Helvetica", 15, "bold"))
     save_btn.pack(pady=8)
 
     view_btn = tk.Button(root, text="📖 View All Reminders", command=view_reminders,
-                         bg="#FFC107", fg="black", padx=10, pady=5, font=("Helvetica", 10, "bold"))
+                         bg="#FFC107", fg="black", padx=10, pady=5, font=("Helvetica", 15, "bold"))
     view_btn.pack(pady=5)
 
     exit_btn = tk.Button(root, text="❌ Exit App", command=exit_app,
-                         bg="#F44336", fg="white", padx=10, pady=5, font=("Helvetica", 10, "bold"))
+                         bg="#F44336", fg="white", padx=10, pady=5, font=("Helvetica", 15, "bold"))
     exit_btn.pack(pady=20)
 
 # -----------------------
@@ -110,7 +110,7 @@ def build_calendar_ui():
 welcome_label = tk.Label(
     root,
     text="✨ Welcome to the Calendar and Reminder App!",
-    font=("Helvetica", 14, "bold"),
+    font=("Helvetica", 22, "bold"),
     wraplength=350,
     justify="center",
     bg="#FFFACD"
@@ -125,7 +125,7 @@ start_button = tk.Button(
     fg="white",
     padx=12,
     pady=6,
-    font=("Helvetica", 12, "bold")
+    font=("Helvetica", 16, "bold")
 )
 start_button.pack()
 
